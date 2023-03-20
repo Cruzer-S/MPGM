@@ -4,6 +4,8 @@ GREP = grep
 AWK = awk
 SORT = sort
 
+all:
+
 .PHONY: help no-such-target
 help:
 	@$(MAKE) --print-data-base --question no-such-target	|	\
