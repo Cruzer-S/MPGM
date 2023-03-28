@@ -9,5 +9,5 @@ endif
 all:
 	@echo export_var = $(export_var)
 ifneq ($(MAKELEVEL), 1)
-	make
+	$(MAKE)
 endif
