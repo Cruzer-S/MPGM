@@ -1,16 +1,16 @@
 SPACE := $(subst ,, )
 
-make-path = $(subst \\\\,\$(SPACE),			\
-             $(subst :, ,				\
-              $(subst $(SPACE),\\\\,			\
-               $(subst ::,:.:,				\
-	        $(patsubst :%,.:%,			\
-	         $(patsubst %:,%:.,$(PATH)))))))
+PATH := $(strip $(subst ::,:.:,$(patsubst :%,.:%,$(patsubst %:,%:.,$(PATH)))))
 
-find-program = $(wildcard 				\
-		$(addsuffix /$1,			\
-		 $(sort	$(call make-path))))
-		  
+SPATH := $(sort $(subst :, ,$(subst $(SPACE),\\,$(PATH))))
+
+find-program = $(wildcard $(subst \\,\$(SPACE),$(addsuffix /$1,$(SPATH))))
 
 all:
+	########################################################################
+	# PATH: $(PATH) 
+	########################################################################
+	# SPATH: $(SPATH)
+	########################################################################
 	# total program: $(words $(call find-program,*))
+	########################################################################
