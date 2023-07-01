@@ -1,10 +1,12 @@
 #include <stdio.h>
 
 #include "codec/codec.h"
+#include "db/scanner.h"
+#include "ui/ui.h"
 
 int main(int argc, char *argv[])
 {
-	printf("hello, world!\n");
+	ui(codec(yylex()));
 
 	return 0;
 }
