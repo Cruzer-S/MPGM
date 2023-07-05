@@ -1,4 +1,7 @@
-SOURCE_DIR := ..
+SOURCE_DIR := $(dir $(MAKEFILE_LIST))
+
+check-execution-path := $(if $(filter $(abspath $(SOURCE_DIR)),$(abspath $(CURDIR))),\
+						$(error Please run the makefile from the binary tree))
 
 source-to-object = $(subst .c,.o,$(filter %.c,$1))	\
 				   $(subst .y,.o,$(filter %.y,$1))	\
