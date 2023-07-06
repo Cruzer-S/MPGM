@@ -26,7 +26,7 @@ fi
 # Set the output directory to a default, if not set.
 if [[ ! $BINARY_DIR ]]
 then
-	BINARY_DIR=${SOURCE_DIR}/build
+	BINARY_DIR=${SOURCE_DIR}/build/$(uname -r)
 fi
 
 # Create the output directory
