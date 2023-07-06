@@ -3,6 +3,8 @@
 cur=$PWD
 export SOURCE_DIR=$cur
 
+shopt -s nullglob
+
 while [[ $SOURCE_DIR ]]
 do
 	MAKEFILE=$(echo $SOURCE_DIR/[Mm]akefile)
