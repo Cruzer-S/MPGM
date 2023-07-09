@@ -68,7 +68,7 @@ endef
 
 # $(call brief-help, makefile)
 define brief-help
-$(AWK) '$$1 ~ /^[^.][-A-Za-z0-9]*:/					\
+$(AWK) '$$1 ~ /^[^.$$][-A-Za-z0-9]*:/					\
 	{ print substr($$1, 1, length($$1)-1) }' $1	|	\
 sort | pr -T -w 80 -4
 endef
