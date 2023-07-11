@@ -120,7 +120,8 @@ endef
 export CLASSPATH := $(call build-classpath, $(class_path))
 
 # make-directories - Ensure output directory exists.
-make-directories := $(shell $(MKDIR) $(OUTPUT_DIR))
+make-directories := $(shell $(MKDIR) $(OUTPUT_DIR); \
+							$(MKDIR) ./jars)
 
 # help - The default goal
 .PHONY: help
