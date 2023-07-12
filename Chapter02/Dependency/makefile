@@ -18,6 +18,6 @@ lexer.o: lexer.h
 
 .PHONY: clean
 clean:
-	rm -f deps/*.d *.o count_words
+	rm -f deps/* *.o count_words
 
 -include $(subst .c,.d,$(SOURCES))
